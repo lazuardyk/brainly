@@ -28,7 +28,7 @@ try:
     for x in range(4):
         jawaban = scrap['data']['tasks']['items'][0]['responses'][x]['content']
         jawaban = jawaban.replace("<br />","\n").replace("<span>","").replace("</span>","")
-        print("Jawaban ke-" + str(x) + ":\n" + jawaban + "\n")
+        print("Jawaban ke-" + str(x+1) + ":\n" + jawaban + "\n")
     print("="*25)
 except:
     print("Terdapat kurang dari 5 jawaban")
