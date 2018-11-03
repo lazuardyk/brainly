@@ -14,12 +14,16 @@ payload = {"limit":10,
            "query":ask}
 url = "https://brainly.co.id/api/28/api_tasks/suggester"
 scrap = json.loads(requests.get(url, params=payload).text)
-pertanyaan = scrap['data']['tasks']['items'][0]['task']['content']
-pertanyaan = pertanyaan.replace("<br />","\n").replace("<span>","").replace("</span>","")
-print("\nPertanyaan yang diambil:",pertanyaan)
-print("\nMengambil 5 jawaban pertama...\n")
-print("="*25)
-
+try:
+    pertanyaan = scrap['data']['tasks']['items'][0]['task']['content']
+    pertanyaan = pertanyaan.replace("<br />","\n").replace("<span>","").replace("</span>","")
+    print("\nPertanyaan yang diambil:",pertanyaan)
+    print("\nMengambil 5 jawaban pertama...\n")
+    print("="*25)
+except:
+    print("Maaf, tidak ada jawabannya di Brainly. Coba lagi dengan kalimat yang spesifik.")
+    input("Tekan enter untuk keluar")
+    exit()
 try:
     for x in range(4):
         jawaban = scrap['data']['tasks']['items'][0]['responses'][x]['content']
