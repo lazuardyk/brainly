@@ -31,7 +31,8 @@ try:
         print("Jawaban ke-" + str(x+1) + ":\n" + jawaban + "\n")
     print("="*25)
 except:
-    print("Terdapat kurang dari 5 jawaban")
     print("="*25)
+    print("Terdapat kurang dari 5 jawaban")
+    print()
 
 input("Tekan enter untuk keluar")
