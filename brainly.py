@@ -34,5 +34,3 @@ except:
     print("="*25)
     print("Terdapat kurang dari 5 jawaban")
     print()
-
-input("Tekan enter untuk keluar")
